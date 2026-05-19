@@ -1,4 +1,4 @@
-const { getInitials, createSlug, average } = require('../src/snacks');
+const { getInitials, createSlug, average, isPalindrome } = require('../src/snacks');
 
 describe('Snack 1 - getInitials', () => {
   // La funzione getInitials restituisce le iniziali di un nome completo.
@@ -23,5 +23,12 @@ describe('Snack 3 - average', () => {
   // La funzione average calcola la media aritmetica di un array di numeri.
   test('calcola la media aritmetica di un array di numeri', () => {
     expect(average([2, 4, 6, 8])).toBe(5);
+  });
+});
+
+describe('Snack 5 - isPalindrome', () => {
+  // La funzione isPalindrome verifica se una stringa è un palindromo.
+  test('verifica se una stringa è un palindromo', () => {
+    expect(isPalindrome('anna')).toBe(true);
   });
 });
