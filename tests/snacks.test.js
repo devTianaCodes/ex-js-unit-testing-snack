@@ -17,6 +17,16 @@ describe('Snack 2 - createSlug', () => {
   test('sostituisce gli spazi con -', () => {
     expect(createSlug('Questo e un test')).toBe('questo-e-un-test');
   });
+
+  // La funzione createSlug lancia un errore se il titolo è vuoto o non valido.
+  test('lancia un errore se il titolo è vuoto', () => {
+    expect(() => createSlug('')).toThrow('Titolo non valido');
+  });
+
+  // La funzione createSlug lancia un errore se il titolo è vuoto o non valido.
+  test('lancia un errore se il titolo non è valido', () => {
+    expect(() => createSlug(null)).toThrow('Titolo non valido');
+  });
 });
 
 describe('Snack 3 - average', () => {

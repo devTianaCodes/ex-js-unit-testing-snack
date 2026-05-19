@@ -16,7 +16,14 @@ function getInitials(fullName) {
 // Creare un test che verifichi la seguente descrizione:
 // "La funzione createSlug sostituisce gli spazi con -."
 // Esempio: createSlug("Questo è un test") -> "questo-e-un-test"
+// Snack 6
+// Creare un test che verifichi la seguente descrizione:
+// "La funzione createSlug lancia un errore se il titolo è vuoto o non valido."
 function createSlug(title) {
+  if (!title || typeof title !== 'string') {
+    throw new Error('Titolo non valido');
+  }
+
   return title.toLowerCase().replaceAll(' ', '-');
 }
 
