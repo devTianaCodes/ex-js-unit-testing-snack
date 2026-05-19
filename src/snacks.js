@@ -12,8 +12,12 @@ function getInitials(fullName) {
 // Snack 2
 // Creare un test che verifichi la seguente descrizione:
 // "La funzione createSlug restituisce una stringa in lowercase."
+// Snack 4
+// Creare un test che verifichi la seguente descrizione:
+// "La funzione createSlug sostituisce gli spazi con -."
+// Esempio: createSlug("Questo è un test") -> "questo-e-un-test"
 function createSlug(title) {
-  return title.toLowerCase();
+  return title.toLowerCase().replaceAll(' ', '-');
 }
 
 // Snack 3

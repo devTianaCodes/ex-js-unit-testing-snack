@@ -10,7 +10,12 @@ describe('Snack 1 - getInitials', () => {
 describe('Snack 2 - createSlug', () => {
   // La funzione createSlug restituisce una stringa in lowercase.
   test('restituisce una stringa in lowercase', () => {
-    expect(createSlug('QUESTO E UN TEST')).toBe('questo e un test');
+    expect(createSlug('TEST')).toBe('test');
+  });
+
+  // La funzione createSlug sostituisce gli spazi con -.
+  test('sostituisce gli spazi con -', () => {
+    expect(createSlug('Questo e un test')).toBe('questo-e-un-test');
   });
 });
 
