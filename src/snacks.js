@@ -9,6 +9,14 @@ function getInitials(fullName) {
     .toUpperCase();
 }
 
+// Snack 2
+// Creare un test che verifichi la seguente descrizione:
+// "La funzione createSlug restituisce una stringa in lowercase."
+function createSlug(title) {
+  return title.toLowerCase();
+}
+
 module.exports = {
   getInitials,
+  createSlug,
 };
