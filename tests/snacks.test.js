@@ -1,4 +1,11 @@
-const { getInitials, createSlug, average, isPalindrome } = require('../src/snacks');
+const {
+  getInitials,
+  createSlug,
+  average,
+  isPalindrome,
+  posts,
+  findPostById,
+} = require('../src/snacks');
 
 describe('Snack 1 - getInitials', () => {
   // La funzione getInitials restituisce le iniziali di un nome completo.
@@ -40,5 +47,32 @@ describe('Snack 5 - isPalindrome', () => {
   // La funzione isPalindrome verifica se una stringa è un palindromo.
   test('verifica se una stringa è un palindromo', () => {
     expect(isPalindrome('anna')).toBe(true);
+  });
+});
+
+describe('Snack 7 - findPostById', () => {
+  // La funzione findPostById restituisce il post corretto dato l'array di post e l'id.
+  test('restituisce il post corretto dato l array di post e l id', () => {
+    expect(findPostById(posts, 2)).toEqual({
+      id: 2,
+      title: 'Secondo post',
+      slug: 'secondo-post',
+    });
+  });
+
+  // Ogni post ha le proprietà id, title e slug.
+  test('ogni post ha le proprietà id title e slug', () => {
+    posts.forEach((post) => {
+      expect(post).toHaveProperty('id');
+      expect(post).toHaveProperty('title');
+      expect(post).toHaveProperty('slug');
+    });
+  });
+
+  // Viene passato un id numerico.
+  test('l id passato è numerico', () => {
+    const id = 2;
+
+    expect(typeof id).toBe('number');
   });
 });

@@ -60,9 +60,39 @@ function isPalindrome(word) {
 //   return word === reversedWord;
 // }
 
+// Snack 7
+// Crea un array di oggetti posts, in cui ogni oggetto ha le proprietà id, title e slug.
+// Creare un test che verifichi la seguente descrizione:
+// "La funzione findPostById restituisce il post corretto dato l'array di post e l'id"
+// Creare uno o più test aggiuntivi che controllino che la struttura dati passati sia conforme
+// (ogni post ha le proprietà id, title e slug, viene passato un id numerico).
+const posts = [
+  {
+    id: 1,
+    title: 'Primo post',
+    slug: 'primo-post',
+  },
+  {
+    id: 2,
+    title: 'Secondo post',
+    slug: 'secondo-post',
+  },
+  {
+    id: 3,
+    title: 'Terzo post',
+    slug: 'terzo-post',
+  },
+];
+
+function findPostById(postsList, id) {
+  return postsList.find((post) => post.id === id);
+}
+
 module.exports = {
   getInitials,
   createSlug,
   average,
   isPalindrome,
+  posts,
+  findPostById,
 };
